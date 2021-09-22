@@ -15,7 +15,7 @@ export default class ProductController {
         const productResponse = await ProductManagementDAO.addProduct(
          title,type,description,filename,height,width,price,rating
         )
-        res.json({ status: "success" })
+        res.json({ productResponse })
       } catch (e) {
         res.status(500).json({ error: e.message })
       }
@@ -34,15 +34,14 @@ export default class ProductController {
             const rating = req.body.rating
 
             const productResponse = await ProductManagementDAO.updateProduct(
-                id,
-                title,type,description,filename,height,width,price,rating
+                id,title,type,description,filename,height,width,price,rating
               )
 
             //   var { error } = productResponse
             //         if (error) {
             //             res.status(400).json({ error })
             //             }
-              res.json({ status: "success" })
+              res.json({ productResponse })
 
         } catch (error) {
             res.status(500).json({ error: error.message })

@@ -22,7 +22,9 @@ export default class UserManagementDAO
               const personDoc = { 
                   name : username,
                   type : type,
-                  password : password
+                  password : password,
+                  wishlist: [],
+                  cart: []
                }
         
               return await person.insertOne(personDoc)

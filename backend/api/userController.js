@@ -20,7 +20,7 @@ export default class UserController {
 
     static async updateUser(req,res,next) {
         try {
-            const id = req.query.id
+            const id = req.body.id
             const name = req.body.name
             const type = req.body.type
             const password = req.body.password
